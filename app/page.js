@@ -1,11 +1,13 @@
 'use client'
 
 import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
-import { AppBar, Box, Button, Container, Grid, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Container, Grid, Toolbar, Typography, Stack } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
 import getStripe from "@/utils/get-stripe";
 import { useRouter } from 'next/navigation';
+import WaitlistModal from './waitlist/waitlist.js';
+
 
 
 export default function Home() {
@@ -57,7 +59,6 @@ export default function Home() {
         <meta name="description" content="Create flashcard from your text"/>
       </Head>
 
-
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" style={{flexGrow: 1}}>
@@ -81,12 +82,15 @@ export default function Home() {
           {' '}
           The easiest way to make flashcards from your text
         </Typography>
-        <Button variant="contained" sx={{mt: 2}} onClick={handleGenerate}>
-          Get Started
-        </Button>
-        <Button variant="contained" sx={{mt: 2, ml: 2}} onClick={handleFileUpload}>
-          Get Started (File Upload)
-        </Button>
+        <Stack direction="row" spacing={2} justifyContent="center" sx={{ mt: 2 }}>
+          <WaitlistModal/>
+          <Button variant="contained" sx={{mt: 2}} onClick={handleGenerate}>
+            Get Started
+          </Button>
+          <Button variant="contained" sx={{mt: 2, ml: 2}} onClick={handleFileUpload}>
+            Get Started (File Upload)
+          </Button>
+        </Stack>
       </Box>
 
       <Box sx={{my: 6}}>

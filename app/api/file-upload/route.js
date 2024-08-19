@@ -9,7 +9,7 @@ Headings and Subheadings:
 
 Use headings (e.g., Main Heading, Subheading) to clearly delineate sections. Make headings bold and slightly larger. Subheadings should be smaller than main headings but still prominent.
 Paragraphs:
-
+ß
 Separate paragraphs with a blank line. Each paragraph should start with a clear topic and be concise. Avoid long, dense blocks of text.
 Lists:
 
